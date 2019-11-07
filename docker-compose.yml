@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+ oracle:
+    container_name: oracle
+    image: oracle/database:11.2.0.2-xe
+
+    ports:
+      - 1521:1521
+      - 9080:8080 
+    environment:
+
+      ORACLE_PWD: 'Oracle_123'
+    volumes:
+      - oradata:/u01/app/oracle/oradata
+    shm_size: '2gb'
+volumes:
+   oradata:
